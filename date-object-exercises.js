@@ -21,3 +21,9 @@ console.log(`${calendarMonths[date.getMonth()]} ${date.getDate()}, ${date.getFul
 let janDate = new Date(2017, 0);
 
 console.log(`${janDate.getDate()} ${calendarMonths[janDate.getMonth()]} ${janDate.getFullYear()}`);
+
+// EXERCISE 3: Find the number of days between today and 1 Jan 2017.
+
+console.log(`The number of days since January 1st, 2017: ${Math.floor(
+	(date - janDate) / days
+)} days`);
