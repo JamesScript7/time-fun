@@ -28,19 +28,51 @@ console.log(`The number of days since January 1st, 2017: ${daysSinceJan} days`);
 
 
 // EXERCISE 4: Create an array of Date objects from our start date to our end date.
+// EXERCISE 5: Randomly set a boolean workout property on each date object in our array
+
 let
 	start = date.getTime() - millisecondsSinceJan,
 	end = date.getTime(),
 	dayArr = [];
 
-for(let i = start; i < end; i += days) {
-  dayArr.push(i);
+	function workedOut() {
+		let
+			result,
+			randomNum = Math.round(Math.random() * 10);
+
+		if (randomNum > 5) {
+			result = true;
+		} else {
+			result = false;
+		}
+
+		return result;
+	}
+
+for (let i = start; i < end; i += days) {
+	let dateObj = {};
+
+  if (dateObj[i] === undefined) {
+    dateObj[i] = workedOut();
+  }
+
+  dayArr.push(dateObj);
 }
 
-for(let j=0; j < dayArr.length; j++) {
+for(let j = 0; j < dayArr.length; j++) {
   console.log(new Date(dayArr[j]));
 }
 
+console.log(dayArr);
+
+// for(let j = 0; j < dayArr.length; j++) {
+//   let convert = Object.keys(dayArr[j]);
+//   let test = new Date(parseInt(convert));
+
+//   console.log(test);
+//   // console.log(dayArr[j]);
+//   // console.log(new Date(dayArr[j]));
+// }
 
 
 
@@ -48,8 +80,6 @@ for(let j=0; j < dayArr.length; j++) {
 
 
 
-// Exercise 5: Randomly set a boolean workout property on each date object in our array
+// EXERCISE 6: Did you workout on the first day of the year?
 
-// Exercise 6: Did you workout on the first day of the year?
-
-// Exercise 7: Did you workout seven days ago?
+// EXERCISE 7: Did you workout seven days ago?
