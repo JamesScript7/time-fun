@@ -66,15 +66,20 @@ console.log(dayArr);
 
 // EXERCISE 6: Did you workout on the first day of the year?
 
+function didIWorkOut(day) {
+	let
+		input = day.split(/[\/-]/),
+		theMonth = parseInt(input[0]),
+		theDay = parseInt(input[1]),
+		theYear = parseInt(input[2]),
+		inputDate = new Date(theYear, (theMonth - 1), theDay),
+		msg = `Did I work out on ${input.join("-")}? ${dayArr[theDay - 1][inputDate]} ? "Yup": "Nope"`;
 
+	return msg;
+}
 
-
-
-
-
-
-
-
+// Format for the date search is: MM-DD-YYYY
+didIWorkOut("01-01-2017")
 
 
 // EXERCISE 7: Did you workout seven days ago?
