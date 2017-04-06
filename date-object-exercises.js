@@ -73,13 +73,24 @@ function didIWorkOut(day) {
 		theDay = parseInt(input[1]),
 		theYear = parseInt(input[2]),
 		inputDate = new Date(theYear, (theMonth - 1), theDay),
-		msg = `Did I work out on ${input.join("-")}? ${dayArr[theDay - 1][inputDate]} ? "Yup": "Nope"`;
+		msg = "I didn\'t catch that...",
+		daysAgo;
+
+	if (input.length > 1) {
+		msg = `Did I work out on ${input.join("-")}? ${dayArr[theDay - 1][inputDate] ? "Yup": "Nope"}`;
+		return msg;
+	} else if (input.length === 1 && typeof day === 'number') {
+		daysAgo = (parseInt(dayArr.length)) - (parseInt(day));
+		msg = daysArr[daysAgo];
+		return msg;
+	}
 
 	return msg;
 }
 
 // Format for the date search is: MM-DD-YYYY
-didIWorkOut("01-01-2017")
+didIWorkOut("01-01-2017");
 
 
 // EXERCISE 7: Did you workout seven days ago?
+didIWorkOut("1");
