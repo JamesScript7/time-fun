@@ -35,51 +35,46 @@ let
 	end = date.getTime(),
 	dayArr = [];
 
-	function workedOut() {
-		let
-			result,
-			randomNum = Math.round(Math.random() * 10);
+function workedOut() {
+	let
+		result,
+		randomNum = Math.round(Math.random() * 10);
 
-		if (randomNum > 5) {
-			result = true;
-		} else {
-			result = false;
-		}
-
-		return result;
+	if (randomNum > 5) {
+		result = true;
+	} else {
+		result = false;
 	}
 
-for (let i = start; i < end; i += days) {
-	let dateObj = {};
+	return result;
+}
 
-  if (dateObj[i] === undefined) {
-    dateObj[i] = workedOut();
+for (let i = start; i < end; i += days) {
+	let
+		dateObj = {},
+		dateConverted = new Date(i);
+
+  if (dateObj[dateConverted] === undefined) {
+    dateObj[dateConverted] = workedOut();
   }
 
   dayArr.push(dateObj);
 }
 
-for(let j = 0; j < dayArr.length; j++) {
-  console.log(new Date(dayArr[j]));
-}
-
 console.log(dayArr);
-
-// for(let j = 0; j < dayArr.length; j++) {
-//   let convert = Object.keys(dayArr[j]);
-//   let test = new Date(parseInt(convert));
-
-//   console.log(test);
-//   // console.log(dayArr[j]);
-//   // console.log(new Date(dayArr[j]));
-// }
-
-
-
-
-
 
 
 // EXERCISE 6: Did you workout on the first day of the year?
+
+
+
+
+
+
+
+
+
+
+
 
 // EXERCISE 7: Did you workout seven days ago?
